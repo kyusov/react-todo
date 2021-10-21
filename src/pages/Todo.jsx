@@ -146,7 +146,7 @@ function Todo() {
 
             {modal && (
                 <Modal
-                    type={'todo'}
+                    type={info.type}
                     addTaskHandler={addTaskHandler}
                     toggleModal={toggleModal}
                 />
