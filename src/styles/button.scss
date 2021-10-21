@@ -1,0 +1,32 @@
+@import 'colors';
+
+.button {
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+        0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 0;
+
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+
+    &.add {
+        &-todo {
+            background-color: $todo-color;
+        }
+
+        &-doing {
+            background-color: $doing-color;
+        }
+
+        &-done {
+            background-color: $done-color;
+        }
+    }
+}
