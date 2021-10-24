@@ -1,6 +1,8 @@
 @import 'colors';
 
 .task {
+    touch-action: pan-y;
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -14,7 +16,12 @@
         margin-top: 18px;
     }
 
+    &:hover {
+        cursor: grab;
+    }
+
     p {
+        user-select: none;
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
         font-weight: 400;
