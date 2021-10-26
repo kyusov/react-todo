@@ -1,32 +1,80 @@
 @import 'colors';
 
-.task {
-    touch-action: pan-y;
-
+.wrap {
+    position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 16px 24px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
-        0px 0px 1px rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
 
     &:not(:first-child) {
         margin-top: 18px;
     }
 
-    &:hover {
-        cursor: grab;
+    .task {
+        touch-action: pan-y;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 16px 24px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+            0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 16px;
+        background-color: #fefefe;
+
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+            cursor: grab;
+        }
+
+        p {
+            user-select: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: 0.04em;
+            color: $main-text-color;
+            overflow-wrap: anywhere;
+        }
     }
 
-    p {
-        user-select: none;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 160%;
-        letter-spacing: 0.04em;
-        color: $main-text-color;
+    .settings {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 32px;
+
+        &__setting {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:not(:last-child) {
+                margin-right: 42px;
+            }
+        }
+
+        &__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 160%;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+
+            color: rgba(55, 73, 87, 0.45);
+            margin-top: 4px;
+        }
     }
 }
